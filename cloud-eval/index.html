@@ -306,65 +306,82 @@
       margin-top: 3px; flex-shrink: 0;
     }
 
-    /* Download panel that appears after selection */
+    /* ── 3-step download panel ── */
     .download-panel {
       display: none;
-      padding: 16px 20px;
-      background: #f8fbfc;
-      border-top: 1px solid #e0ecf0;
+      border-top: 1px solid #e0e8ed;
+      background: #fff;
+    }
+    .download-panel.visible { display: block; }
+
+    .download-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .download-step {
+      padding: 24px 28px;
+      border-right: 1px solid #e8eef2;
+    }
+    .download-step:last-child { border-right: none; }
+
+    .step-header {
+      display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 6px;
     }
-    .download-panel.visible { display: flex; }
-    .download-panel-info { }
-    .download-panel-product {
-      font-size: 13px;
-      font-weight: 600;
-      color: #1a1a2e;
-      margin-bottom: 2px;
-    }
-    .download-panel-meta {
+    .step-num {
+      width: 26px; height: 26px; flex-shrink: 0;
+      background: #1a3a5c;
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
       font-size: 12px;
-      color: #6a7a8a;
+      font-weight: 700;
     }
-    .download-panel-meta .tag {
-      display: inline-block;
-      background: #e8f4f6;
-      color: #0d7c8c;
-      border-radius: 3px;
-      padding: 1px 7px;
-      font-size: 11px;
-      font-weight: 600;
-      margin-right: 6px;
+    .step-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a1a2e;
     }
-    .download-btn {
+    .step-desc {
+      font-size: 13px;
+      color: #4a5568;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      padding-left: 36px;
+    }
+    .step-action { padding-left: 36px; }
+
+    /* outline action button (matches screenshot style) */
+    .step-btn {
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      background: #0d7c8c;
-      color: #fff;
-      border: none;
+      background: #fff;
+      color: #1a1a2e;
+      border: 1px solid #c0ccd8;
       border-radius: 5px;
-      padding: 9px 18px;
-      font-size: 12px;
+      padding: 8px 14px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.05em;
-      cursor: pointer;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
-    }
-    .download-btn:hover { background: #0b6a79; }
-    .download-btn svg { width: 14px; height: 14px; fill: #fff; }
-    .change-link {
-      font-size: 12px;
-      color: #0d7c8c;
       cursor: pointer;
-      background: none;
-      border: none;
-      padding: 0;
+      white-space: nowrap;
     }
-    .change-link:hover { text-decoration: underline; }
+    .step-btn:hover { border-color: #1a3a5c; background: #f4f8fc; }
+    .step-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .step-btn-icon-apple { fill: #1a1a2e; }
+    .step-btn-icon-dl { fill: none; stroke: #1a1a2e; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .step-btn-icon-ext { fill: none; stroke: #1a1a2e; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .step-sub {
+      margin-top: 8px;
+      font-size: 11.5px;
+      color: #6a7a8a;
+      padding-left: 0;
+    }
 
     /* platform more options */
     .more-options-tab { color: #6a7a8a; font-size: 13px; }
@@ -532,7 +549,7 @@
               </div>
               <div class="dropdown-item-text">
                 <div class="dropdown-item-name">Connext</div>
-                <div class="dropdown-item-desc">Standard DDS middleware SDK &amp; tools</div>
+                <div class="dropdown-item-desc">Flagship Connext product & tools</div>
               </div>
               <svg class="dropdown-item-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
             </div>
@@ -564,7 +581,7 @@
               </div>
               <div class="dropdown-item-text">
                 <div class="dropdown-item-name">Connext</div>
-                <div class="dropdown-item-desc">Standard DDS middleware SDK &amp; tools</div>
+                <div class="dropdown-item-desc">Flagship Connext product & tools</div>
               </div>
               <svg class="dropdown-item-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
             </div>
@@ -596,7 +613,7 @@
               </div>
               <div class="dropdown-item-text">
                 <div class="dropdown-item-name">Connext</div>
-                <div class="dropdown-item-desc">Standard DDS middleware SDK &amp; tools</div>
+                <div class="dropdown-item-desc">Flagship Connext product & tools</div>
               </div>
               <svg class="dropdown-item-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
             </div>
@@ -628,7 +645,7 @@
               </div>
               <div class="dropdown-item-text">
                 <div class="dropdown-item-name">Connext</div>
-                <div class="dropdown-item-desc">Standard DDS middleware SDK &amp; tools</div>
+                <div class="dropdown-item-desc">Flagship Connext product &amp; tools</div>
               </div>
               <svg class="dropdown-item-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
             </div>
@@ -650,21 +667,57 @@
 
       </div><!-- /platform-tabs -->
 
-      <!-- ★ NEW: Download panel — appears after product selection -->
+      <!-- ★ NEW: 3-step download panel — appears after product selection -->
       <div class="download-panel" id="downloadPanel">
-        <div class="download-panel-info">
-          <div class="download-panel-product" id="panelProductName">—</div>
-          <div class="download-panel-meta">
-            <span class="tag" id="panelOS">—</span>
-            <span id="panelMeta">Ready to download</span>
+        <div class="download-steps">
+
+          <!-- Step 1: Download Installer -->
+          <div class="download-step">
+            <div class="step-header">
+              <div class="step-num">1</div>
+              <div class="step-title">Download Installer</div>
+            </div>
+            <div class="step-desc">Download and run the installer to install <span id="panelProductName">Connext</span>.</div>
+            <div class="step-action">
+              <button class="step-btn" id="installerBtn">
+                <!-- icon swapped by JS -->
+                <svg id="installerIcon" viewBox="0 0 24 24" width="14" height="14"><path class="step-btn-icon-apple" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.18 1.27-2.16 3.8.03 3.02 2.65 4.03 2.68 4.04l-.07.28zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <span id="installerBtnLabel">macOS INSTALLER</span>
+              </button>
+              <div class="step-sub" id="installerSub">Connext 7.7.0 for macOS® (Apple Silicon) 14, 15, 26</div>
+            </div>
           </div>
-        </div>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <button class="change-link" onclick="clearSelection()">Change</button>
-          <button class="download-btn">
-            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Download Installer
-          </button>
+
+          <!-- Step 2: Download License File -->
+          <div class="download-step">
+            <div class="step-header">
+              <div class="step-num">2</div>
+              <div class="step-title">Download License File</div>
+            </div>
+            <div class="step-desc">You'll use this file in the next step to activate your license.</div>
+            <div class="step-action">
+              <button class="step-btn">
+                <svg viewBox="0 0 24 24" width="14" height="14"><path class="step-btn-icon-dl" d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline class="step-btn-icon-dl" points="7 10 12 15 17 10"/><line class="step-btn-icon-dl" x1="12" y1="15" x2="12" y2="3"/></svg>
+                LICENSE ACTIVATION FILE
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Get Started -->
+          <div class="download-step">
+            <div class="step-header">
+              <div class="step-num">3</div>
+              <div class="step-title">Get Started</div>
+            </div>
+            <div class="step-desc">Set up your license and build your first <span id="panelProductName2">Connext</span> application.</div>
+            <div class="step-action">
+              <button class="step-btn">
+                <svg viewBox="0 0 24 24" width="14" height="14"><path class="step-btn-icon-ext" d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline class="step-btn-icon-ext" points="15 3 21 3 21 9"/><line class="step-btn-icon-ext" x1="10" y1="14" x2="21" y2="3"/></svg>
+                OPEN GUIDE
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -730,26 +783,45 @@
     activeDropdown = !isOpen ? wrapper : null;
   }
 
+  // OS metadata: button label, sub-text suffix, and icon SVG path
+  const osMeta = {
+    macos:  { label: 'MACOS INSTALLER',         icon: 'apple',   sub: 'for macOS® (Apple Silicon) 14, 15, 26' },
+    linapt: { label: 'LINUX (APT) INSTALLER',   icon: 'linux',   sub: 'for Ubuntu 22.04 / 24.04 (x64)' },
+    linins: { label: 'LINUX INSTALLER',         icon: 'linux',   sub: 'for Linux x64 · .run installer' },
+    win:    { label: 'WINDOWS INSTALLER',       icon: 'windows', sub: 'for Windows 10 / 11 (x64)' },
+  };
+
+  const iconSVGs = {
+    apple:   '<path fill="#1a1a2e" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.18 1.27-2.16 3.8.03 3.02 2.65 4.03 2.68 4.04l-.07.28zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>',
+    linux:   '<path fill="#1a1a2e" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>',
+    windows: '<path fill="#1a1a2e" d="M3 12V6.75l6-1.32v6.57H3zm17 0V5.25l-9 1.66V12h9zM3 13h6v6.57l-6-1.32V13zm17 0h-9v5.09l9 1.66V13z"/>',
+  };
+
   function selectProduct(osId, productId, productName, metaText, event) {
     event.stopPropagation();
-    // Close dropdown
     const wrapper = document.getElementById('wrap-' + osId);
     wrapper.classList.remove('open');
     wrapper.querySelector('.os-tab').classList.add('active');
     activeDropdown = null;
 
-    // Show download panel
-    const panel = document.getElementById('downloadPanel');
-    document.getElementById('panelProductName').textContent = productName;
-    document.getElementById('panelOS').textContent = metaText.split(' · ')[0];
-    document.getElementById('panelMeta').textContent = metaText.split(' · ')[1] + ' · Ready to download';
-    panel.classList.add('visible');
+    const os = osMeta[osId] || { label: 'INSTALLER', icon: 'linux', sub: '' };
+    const shortName = productId === 'automotive' ? 'Connext Drive' : 'Connext';
+    const versionPrefix = productId === 'automotive' ? 'Connext Drive 7.7.0 ' : 'Connext 7.7.0 ';
+
+    // Populate step 1
+    document.getElementById('panelProductName').textContent = shortName;
+    document.getElementById('installerBtnLabel').textContent = os.label;
+    document.getElementById('installerIcon').innerHTML = iconSVGs[os.icon];
+    document.getElementById('installerSub').textContent = versionPrefix + os.sub;
+
+    // Populate step 3
+    document.getElementById('panelProductName2').textContent = shortName;
+
+    document.getElementById('downloadPanel').classList.add('visible');
   }
 
   function clearSelection() {
-    const panel = document.getElementById('downloadPanel');
-    panel.classList.remove('visible');
-    // deactivate all tabs
+    document.getElementById('downloadPanel').classList.remove('visible');
     document.querySelectorAll('.os-tab').forEach(t => t.classList.remove('active'));
   }
 
