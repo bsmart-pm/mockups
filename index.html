@@ -3,13 +3,211 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mockups</title>
+    <title>Mockups Directory</title>
+    <style>
+      :root {
+        --bg-1: #f4f8ff;
+        --bg-2: #ecf7f2;
+        --ink: #10233a;
+        --muted: #4a6078;
+        --card: rgba(255, 255, 255, 0.78);
+        --card-border: rgba(16, 35, 58, 0.12);
+        --accent: #0f7c8d;
+        --accent-2: #e05a1e;
+        --shadow: 0 12px 32px rgba(16, 35, 58, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Avenir Next", "Segoe UI", Roboto, sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 0% 0%, #dfeeff 0%, transparent 45%),
+          radial-gradient(circle at 100% 100%, #d8f5e6 0%, transparent 45%),
+          linear-gradient(135deg, var(--bg-1), var(--bg-2));
+      }
+
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 44px 20px 56px;
+      }
+
+      .hero {
+        margin-bottom: 24px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(15, 124, 141, 0.12);
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 12px 0 10px;
+        font-size: clamp(28px, 4vw, 44px);
+        line-height: 1.1;
+      }
+
+      .sub {
+        margin: 0;
+        max-width: 700px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .grid {
+        list-style: none;
+        margin: 26px 0 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        position: relative;
+        border-radius: 18px;
+        border: 1px solid var(--card-border);
+        background: var(--card);
+        backdrop-filter: blur(6px);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 34px rgba(16, 35, 58, 0.18);
+        border-color: rgba(15, 124, 141, 0.4);
+      }
+
+      .card a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        padding: 18px 18px 16px;
+      }
+
+      .card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+      }
+
+      .badge-primary {
+        background: rgba(15, 124, 141, 0.14);
+        color: var(--accent);
+      }
+
+      .badge-secondary {
+        background: rgba(224, 90, 30, 0.14);
+        color: var(--accent-2);
+      }
+
+      .arrow {
+        width: 28px;
+        height: 28px;
+        border-radius: 999px;
+        border: 1px solid rgba(16, 35, 58, 0.12);
+        display: grid;
+        place-items: center;
+        font-size: 14px;
+        transition: transform 180ms ease;
+      }
+
+      .card:hover .arrow {
+        transform: translateX(2px);
+      }
+
+      .title {
+        margin: 0 0 6px;
+        font-size: 19px;
+        line-height: 1.2;
+      }
+
+      .desc {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .footer {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 560px) {
+        .wrap {
+          padding-top: 30px;
+        }
+
+        .card a {
+          padding: 16px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>Mockups</h1>
-    <ul>
-      <li><a href="./cloud-eval/">Cloud Eval</a></li>
-      <li><a href="./cloud-eval-integrations/">Cloud Eval Integrations</a></li>
-    </ul>
+    <main class="wrap">
+      <section class="hero">
+        <span class="eyebrow">Mockups Hub</span>
+        <h1>Feature Mockup Directory</h1>
+        <p class="sub">
+          Choose a mockup to open. This page is your top-level navigator for all shareable GitHub Pages mockups.
+        </p>
+      </section>
+
+      <ul class="grid">
+        <li class="card">
+          <a href="./cloud-eval/">
+            <div class="card-top">
+              <span class="badge badge-primary">Primary Flow</span>
+              <span class="arrow">→</span>
+            </div>
+            <h2 class="title">Cloud Eval</h2>
+            <p class="desc">Main evaluation experience, download flow, and onboarding interactions.</p>
+          </a>
+        </li>
+
+        <li class="card">
+          <a href="./cloud-eval-integrations/">
+            <div class="card-top">
+              <span class="badge badge-secondary">Integrations</span>
+              <span class="arrow">→</span>
+            </div>
+            <h2 class="title">Cloud Eval Integrations</h2>
+            <p class="desc">Integration-focused scenarios and extension mockups for connected workflows.</p>
+          </a>
+        </li>
+      </ul>
+
+      <p class="footer">Add a new card here whenever a new mockup folder is added.</p>
+    </main>
   </body>
 </html>
