@@ -5,444 +5,131 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Connext Evaluation – Mockup</title>
   <style>
-    /* ── Reset & Base ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-size: 14px;
-      color: #1a1a2e;
-      background: #fff;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; color: #1a1a2e; background: #fff; }
     a { color: #0d7c8c; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* ── Nav ── */
-    nav {
-      background: #1a3a5c;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 24px;
-      height: 50px;
-    }
+    /* Nav */
+    nav { background: #1a3a5c; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 50px; }
     .nav-left { display: flex; align-items: center; gap: 12px; }
-    .nav-logo {
-      width: 36px; height: 36px;
-      background: linear-gradient(135deg, #e05a1e 40%, #f07d3c 100%);
-      border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-weight: 800; font-size: 13px; letter-spacing: -0.5px;
-    }
-    .nav-title {
-      color: #fff;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .nav-avatar {
-      width: 32px; height: 32px;
-      background: #2a5a7c;
-      border: 2px solid #3a7a9c;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 12px; font-weight: 600;
-      cursor: pointer;
-    }
+    .nav-logo { width: 36px; height: 36px; background: linear-gradient(135deg, #e05a1e 40%, #f07d3c 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; font-size: 13px; letter-spacing: -0.5px; }
+    .nav-title { color: #fff; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-avatar { width: 32px; height: 32px; background: #2a5a7c; border: 2px solid #3a7a9c; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 600; cursor: pointer; }
 
-    /* ── NEW: ROS2 Integration Banner ── */
-    .ros2-banner {
-      background: #e8f4f6;
-      border-bottom: 1px solid #b8dde4;
-      padding: 10px 24px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .ros2-banner-icon {
-      width: 28px; height: 28px; flex-shrink: 0;
-      background: #0d7c8c;
-      border-radius: 5px;
-      display: flex; align-items: center; justify-content: center;
-    }
+    /* ROS2 Banner */
+    .ros2-banner { background: #e8f4f6; border-bottom: 1px solid #b8dde4; padding: 10px 24px; display: flex; align-items: center; gap: 12px; }
+    .ros2-banner-icon { width: 28px; height: 28px; flex-shrink: 0; background: #0d7c8c; border-radius: 5px; display: flex; align-items: center; justify-content: center; }
     .ros2-banner-icon svg { width: 16px; height: 16px; fill: #fff; }
-    .ros2-banner-text {
-      flex: 1;
-      font-size: 13px;
-      color: #1a3a5c;
-      line-height: 1.4;
-    }
+    .ros2-banner-text { flex: 1; font-size: 13px; color: #1a3a5c; line-height: 1.4; }
     .ros2-banner-text strong { font-weight: 600; }
-    .ros2-banner-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: #0d7c8c;
-      color: #fff;
-      border-radius: 4px;
-      padding: 6px 14px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      white-space: nowrap;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
+    .ros2-banner-link { display: inline-flex; align-items: center; gap: 5px; background: #0d7c8c; color: #fff; border-radius: 4px; padding: 6px 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.03em; white-space: nowrap; text-decoration: none; flex-shrink: 0; }
     .ros2-banner-link:hover { background: #0b6a79; text-decoration: none; }
     .ros2-banner-link svg { width: 12px; height: 12px; fill: #fff; }
 
-    /* ── Page content wrapper ── */
+    /* Page */
     .page { max-width: 940px; margin: 0 auto; padding: 32px 24px 60px; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #0d7c8c; margin-bottom: 8px; }
+    .section-title { font-size: 26px; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
+    .section-desc { font-size: 14px; color: #4a5568; line-height: 1.6; max-width: 560px; margin-bottom: 22px; }
 
-    /* ── Section labels ── */
-    .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #0d7c8c;
-      margin-bottom: 8px;
-    }
-    .section-title {
-      font-size: 26px;
-      font-weight: 700;
-      color: #1a1a2e;
-      margin-bottom: 10px;
-    }
-    .section-desc {
-      font-size: 14px;
-      color: #4a5568;
-      line-height: 1.6;
-      max-width: 560px;
-      margin-bottom: 22px;
-    }
-
-    /* ── Cloud workspace card ── */
-    .cloud-card {
-      background: #f0f7f9;
-      border: 1px solid #d0e8ed;
-      border-radius: 10px;
-      padding: 28px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 48px;
-      overflow: hidden;
-      position: relative;
-    }
+    /* Cloud card */
+    .cloud-card { background: #f0f7f9; border: 1px solid #d0e8ed; border-radius: 10px; padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 48px; overflow: hidden; position: relative; }
     .cloud-card-left { flex: 1; }
-    .cloud-card-tags {
-      font-size: 12px;
-      color: #4a7a8a;
-      margin-bottom: 16px;
-    }
-    .launch-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #e05a1e;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      padding: 11px 20px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
+    .cloud-card-tags { font-size: 12px; color: #4a7a8a; margin-bottom: 16px; }
+    .launch-btn { display: inline-flex; align-items: center; gap: 8px; background: #e05a1e; color: #fff; border: none; border-radius: 5px; padding: 11px 20px; font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer; }
     .launch-btn:hover { background: #c94d15; }
     .launch-btn svg { width: 14px; height: 14px; fill: #fff; }
-    .cloud-card-illustration {
-      width: 200px; height: 110px; flex-shrink: 0;
-      background: linear-gradient(135deg, #d0e8ed 0%, #b8d8e8 100%);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-    }
-    .ide-mockup {
-      background: #fff;
-      border-radius: 5px;
-      width: 155px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-      overflow: hidden;
-    }
-    .ide-titlebar {
-      background: #e8eef2;
-      padding: 5px 8px;
-      display: flex; gap: 4px; align-items: center;
-    }
+    .cloud-card-illustration { width: 200px; height: 110px; flex-shrink: 0; background: linear-gradient(135deg, #d0e8ed 0%, #b8d8e8 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .ide-mockup { background: #fff; border-radius: 5px; width: 155px; box-shadow: 0 3px 12px rgba(0,0,0,0.15); overflow: hidden; }
+    .ide-titlebar { background: #e8eef2; padding: 5px 8px; display: flex; gap: 4px; align-items: center; }
     .dot { width: 7px; height: 7px; border-radius: 50%; }
-    .dot-r { background: #ff6059; }
-    .dot-y { background: #febc2e; }
-    .dot-g { background: #28c840; }
-    .ide-code {
-      padding: 8px;
-      font-family: monospace;
-      font-size: 9px;
-      color: #334;
-      line-height: 1.5;
-    }
-    .ide-code .kw { color: #0d7c8c; }
-    .ide-code .fn { color: #e05a1e; }
-    .bars {
-      display: flex; gap: 4px; align-items: flex-end;
-      padding: 4px 8px 6px;
-    }
+    .dot-r { background: #ff6059; } .dot-y { background: #febc2e; } .dot-g { background: #28c840; }
+    .ide-code { padding: 8px; font-family: monospace; font-size: 9px; color: #334; line-height: 1.5; }
+    .ide-code .kw { color: #0d7c8c; } .ide-code .fn { color: #e05a1e; }
+    .bars { display: flex; gap: 4px; align-items: flex-end; padding: 4px 8px 6px; }
     .bar { border-radius: 2px; width: 14px; }
-    .bar-1 { height: 18px; background: #5aa8c8; }
-    .bar-2 { height: 28px; background: #0d7c8c; }
-    .bar-3 { height: 22px; background: #e05a1e; }
+    .bar-1 { height: 18px; background: #5aa8c8; } .bar-2 { height: 28px; background: #0d7c8c; } .bar-3 { height: 22px; background: #e05a1e; }
 
-    /* ── Install locally section ── */
+    /* Install section */
     .install-section { margin-bottom: 48px; }
-    .platform-card {
-      border: 1px solid #d0d8e0;
-      border-radius: 8px;
-      overflow: visible;
-      margin-bottom: 12px;
-    }
-    .platform-tabs {
-      display: flex;
-      border-bottom: 1px solid #d0d8e0;
-      background: #fff;
-      border-radius: 8px 8px 0 0;
-      overflow: visible;
-    }
+    .platform-card { border: 1px solid #d0d8e0; border-radius: 8px; overflow: visible; margin-bottom: 12px; }
+    .platform-tabs { display: flex; border-bottom: 1px solid #d0d8e0; background: #fff; border-radius: 8px 8px 0 0; overflow: visible; }
 
-    /* ── NEW: OS button with dropdown ── */
-    .os-tab-wrapper {
-      position: relative;
-    }
-    .os-tab {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      padding: 14px 18px;
-      font-size: 13px;
-      color: #4a5568;
-      cursor: pointer;
-      border: none;
-      background: transparent;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -1px;
-      white-space: nowrap;
-      transition: color 0.15s;
-    }
+    /* OS tab */
+    .os-tab-wrapper { position: relative; }
+    .os-tab { display: flex; align-items: center; gap: 7px; padding: 14px 18px; font-size: 13px; color: #4a5568; cursor: pointer; border: none; background: transparent; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; transition: color 0.15s; }
     .os-tab:hover { color: #1a3a5c; }
-    .os-tab.active {
-      color: #0d7c8c;
-      border-bottom-color: #0d7c8c;
-      font-weight: 600;
-    }
+    .os-tab.active { color: #0d7c8c; border-bottom-color: #0d7c8c; font-weight: 600; }
     .os-tab svg { width: 15px; height: 15px; }
-    .os-tab .caret {
-      width: 10px; height: 10px;
-      fill: currentColor;
-      margin-left: 2px;
-      transition: transform 0.2s;
-    }
+    .os-tab .caret { width: 10px; height: 10px; fill: currentColor; margin-left: 2px; transition: transform 0.2s; }
     .os-tab-wrapper.open .caret { transform: rotate(180deg); }
 
     /* Product dropdown */
-    .product-dropdown {
-      display: none;
-      position: absolute;
-      top: calc(100% + 4px);
-      left: 0;
-      background: #fff;
-      border: 1px solid #d0d8e0;
-      border-radius: 7px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-      min-width: 240px;
-      z-index: 100;
-      overflow: hidden;
-    }
+    .product-dropdown { display: none; position: absolute; top: calc(100% + 4px); left: 0; background: #fff; border: 1px solid #d0d8e0; border-radius: 7px; box-shadow: 0 6px 20px rgba(0,0,0,0.12); min-width: 268px; z-index: 100; overflow: hidden; }
     .os-tab-wrapper.open .product-dropdown { display: block; }
-
-    .dropdown-header {
-      padding: 9px 14px 7px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #8a9ab0;
-      border-bottom: 1px solid #f0f0f0;
-    }
-    .dropdown-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 12px 14px;
-      cursor: pointer;
-      transition: background 0.1s;
-    }
+    .dropdown-header { padding: 9px 14px 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #8a9ab0; border-bottom: 1px solid #f0f0f0; }
+    .dropdown-item { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; cursor: pointer; transition: background 0.1s; }
     .dropdown-item:hover { background: #f4fafc; }
     .dropdown-item + .dropdown-item { border-top: 1px solid #f0f0f0; }
-    .dropdown-item-icon {
-      width: 30px; height: 30px; flex-shrink: 0;
-      border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .icon-connext { background: #e8f4f6; }
-    .icon-automotive { background: #fff4ee; }
+    .dropdown-item-icon { width: 30px; height: 30px; flex-shrink: 0; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+    .icon-connext { background: #e8f4f6; } .icon-automotive { background: #fff4ee; }
     .dropdown-item-icon svg { width: 16px; height: 16px; }
     .dropdown-item-text { flex: 1; }
-    .dropdown-item-name {
-      font-size: 13px;
-      font-weight: 600;
-      color: #1a1a2e;
-      margin-bottom: 2px;
-    }
-    .dropdown-item-desc {
-      font-size: 11px;
-      color: #6a7a8a;
-      line-height: 1.35;
-    }
-    .dropdown-item-arrow {
-      width: 14px; height: 14px;
-      fill: #a0aab8;
-      margin-top: 3px; flex-shrink: 0;
-    }
+    .dropdown-item-name { font-size: 13px; font-weight: 600; color: #1a1a2e; margin-bottom: 2px; }
+    .dropdown-item-desc { font-size: 11px; color: #6a7a8a; line-height: 1.35; }
+    .dropdown-item-arrow { width: 14px; height: 14px; fill: #a0aab8; margin-top: 3px; flex-shrink: 0; }
 
-    /* ── 3-step download panel ── */
-    .download-panel {
-      display: none;
-      border-top: 1px solid #e0e8ed;
-      background: #fff;
-    }
+    /* Linux sub-items */
+    .linux-subitems { display: none; background: #f4f9fb; }
+    .linux-subitems.open { display: block; }
+    .dropdown-subitem { display: flex; align-items: center; gap: 10px; padding: 9px 14px 9px 22px; cursor: pointer; transition: background 0.1s; border-top: 1px solid #edf1f4; }
+    .dropdown-subitem:hover { background: #e8f4f6; }
+    .dropdown-subitem-icon { width: 24px; height: 24px; flex-shrink: 0; border-radius: 4px; background: #daeef3; display: flex; align-items: center; justify-content: center; }
+    .dropdown-subitem-icon svg { width: 13px; height: 13px; }
+    .subitem-label { font-size: 12px; font-weight: 600; color: #1a1a2e; }
+    .subitem-desc { font-size: 11px; color: #6a7a8a; }
+    .subitem-arrow { width: 12px; height: 12px; margin-left: auto; flex-shrink: 0; }
+    .linux-expand-caret { transition: transform 0.2s; }
+
+    /* Download panel */
+    .download-panel { display: none; border-top: 1px solid #e0e8ed; background: #fff; }
     .download-panel.visible { display: block; }
-
-    .download-steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .download-step {
-      padding: 24px 28px;
-      border-right: 1px solid #e8eef2;
-    }
+    .download-steps { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .download-step { padding: 24px 28px; border-right: 1px solid #e8eef2; }
     .download-step:last-child { border-right: none; }
-
-    .step-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 6px;
-    }
-    .step-num {
-      width: 26px; height: 26px; flex-shrink: 0;
-      background: #1a3a5c;
-      color: #fff;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 12px;
-      font-weight: 700;
-    }
-    .step-title {
-      font-size: 14px;
-      font-weight: 700;
-      color: #1a1a2e;
-    }
-    .step-desc {
-      font-size: 13px;
-      color: #4a5568;
-      line-height: 1.5;
-      margin-bottom: 16px;
-      padding-left: 36px;
-    }
+    .step-header { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .step-num { width: 26px; height: 26px; flex-shrink: 0; background: #1a3a5c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+    .step-title { font-size: 14px; font-weight: 700; color: #1a1a2e; }
+    .step-desc { font-size: 13px; color: #4a5568; line-height: 1.5; margin-bottom: 16px; padding-left: 36px; }
     .step-action { padding-left: 36px; }
-
-    /* outline action button (matches screenshot style) */
-    .step-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: #fff;
-      color: #1a1a2e;
-      border: 1px solid #c0ccd8;
-      border-radius: 5px;
-      padding: 8px 14px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      cursor: pointer;
-      white-space: nowrap;
-    }
+    .step-btn { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: #1a1a2e; border: 1px solid #c0ccd8; border-radius: 5px; padding: 8px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer; white-space: nowrap; }
     .step-btn:hover { border-color: #1a3a5c; background: #f4f8fc; }
     .step-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
     .step-btn-icon-apple { fill: #1a1a2e; }
     .step-btn-icon-dl { fill: none; stroke: #1a1a2e; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     .step-btn-icon-ext { fill: none; stroke: #1a1a2e; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .step-sub { margin-top: 8px; font-size: 11.5px; color: #6a7a8a; }
 
-    .step-sub {
-      margin-top: 8px;
-      font-size: 11.5px;
-      color: #6a7a8a;
-      padding-left: 0;
-    }
-
-    /* platform more options */
     .more-options-tab { color: #6a7a8a; font-size: 13px; }
+    .license-note { font-size: 13px; color: #4a5568; margin-top: 10px; }
+    .section-divider { border: none; border-top: 1px solid #e8eef2; margin: 36px 0; }
 
-    /* ── License note ── */
-    .license-note {
-      font-size: 13px;
-      color: #4a5568;
-      margin-top: 10px;
-    }
-
-    /* ── More resources ── */
-    .resources-section { }
-    .resources-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 16px;
-    }
-    .resource-card {
-      border: 1px solid #d0d8e0;
-      border-radius: 8px;
-      padding: 20px;
-      min-height: 100px;
-      background: #fff;
-    }
-    .resource-card-icon {
-      width: 32px; height: 32px;
-      background: #e8f4f6;
-      border-radius: 6px;
-      margin-bottom: 10px;
-      display: flex; align-items: center; justify-content: center;
-    }
+    /* Resources */
+    .resources-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+    .resource-card { border: 1px solid #d0d8e0; border-radius: 8px; padding: 20px; min-height: 100px; background: #fff; }
+    .resource-card-icon { width: 32px; height: 32px; background: #e8f4f6; border-radius: 6px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; }
     .resource-card-icon svg { width: 16px; height: 16px; fill: #0d7c8c; }
     .resource-card-title { font-size: 13px; font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
     .resource-card-desc { font-size: 12px; color: #6a7a8a; line-height: 1.4; }
 
-    /* ── Divider ── */
-    .section-divider { border: none; border-top: 1px solid #e8eef2; margin: 36px 0; }
-
-    /* ── Annotation callouts (mockup helper) ── */
-    .callout {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #fff8e6;
-      border: 1px solid #f0c040;
-      border-radius: 5px;
-      padding: 5px 10px;
-      font-size: 11px;
-      color: #7a5a00;
-      margin-top: 6px;
-    }
+    /* Callout */
+    .callout { display: inline-flex; align-items: center; gap: 6px; background: #fff8e6; border: 1px solid #f0c040; border-radius: 5px; padding: 5px 10px; font-size: 11px; color: #7a5a00; margin-top: 6px; }
     .callout svg { width: 12px; height: 12px; fill: #c08000; flex-shrink: 0; }
   </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════
-     NAV BAR (unchanged from existing)
-═══════════════════════════════════════════ -->
 <nav>
   <div class="nav-left">
     <div class="nav-logo">rti</div>
@@ -451,42 +138,22 @@
   <div class="nav-avatar">BS ▾</div>
 </nav>
 
-<!-- ═══════════════════════════════════════════
-     ★ NEW: ROS2 / Third-Party Integration Banner
-═══════════════════════════════════════════ -->
 <div class="ros2-banner">
   <div class="ros2-banner-icon">
-    <!-- puzzle-piece / integration icon -->
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M20.5 11H19V7a2 2 0 0 0-2-2h-4V3.5a2.5 2.5 0 0 0-5 0V5H4a2 2 0 0 0-2 2v3.8h1.5c1.5 0 2.7 1.2 2.7 2.7S5 16.2 3.5 16.2H2V20a2 2 0 0 0 2 2h3.8v-1.5c0-1.5 1.2-2.7 2.7-2.7s2.7 1.2 2.7 2.7V22H17a2 2 0 0 0 2-2v-4h1.5a2.5 2.5 0 0 0 0-5z"/>
-    </svg>
+    <svg viewBox="0 0 24 24"><path d="M20.5 11H19V7a2 2 0 0 0-2-2h-4V3.5a2.5 2.5 0 0 0-5 0V5H4a2 2 0 0 0-2 2v3.8h1.5c1.5 0 2.7 1.2 2.7 2.7S5 16.2 3.5 16.2H2V20a2 2 0 0 0 2 2h3.8v-1.5c0-1.5 1.2-2.7 2.7-2.7s2.7 1.2 2.7 2.7V22H17a2 2 0 0 0 2-2v-4h1.5a2.5 2.5 0 0 0 0-5z"/></svg>
   </div>
   <div class="ros2-banner-text">
     <strong>Using Connext with ROS 2 or a third-party integration?</strong>
     &nbsp;We have a dedicated setup guide for ROS 2, DDS plugins, and other integration frameworks — skip the standard evaluation flow.
   </div>
-  <a href="#" class="ros2-banner-link">
+  <a href="connext-integrations.html" class="ros2-banner-link">
     View Integration Guide
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M5 12h14M12 5l7 7-7 7"/>
-      <path d="M5 12h14" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <path d="M13 6l6 6-6 6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+    <svg viewBox="0 0 24 24"><path d="M5 12h14" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M13 6l6 6-6 6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </a>
 </div>
-<div style="margin-left:24px;margin-top:4px;margin-bottom:2px">
-  <span class="callout">
-    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>
-    ★ NEW — Banner linking to the ROS2 / third-party integration page
-  </span>
-</div>
 
-<!-- ═══════════════════════════════════════════
-     PAGE CONTENT
-═══════════════════════════════════════════ -->
 <div class="page">
 
-  <!-- Cloud Workspace -->
   <div class="section-label">Cloud Workspace</div>
   <h1 class="section-title">Try Connext in your browser</h1>
   <p class="section-desc">Launch a ready-to-use browser IDE with guided, pre-configured examples, and AI-assisted exploration and data visualization. The fastest way to start your evaluation.</p>
@@ -495,7 +162,6 @@
     <div class="cloud-card-left">
       <div class="cloud-card-tags">No installation · Ready-to-run examples · AI assistance</div>
       <button class="launch-btn">
-        <!-- play icon -->
         <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         Launch Workspace
       </button>
@@ -503,26 +169,16 @@
     <div class="cloud-card-illustration">
       <div class="ide-mockup">
         <div class="ide-titlebar">
-          <div class="dot dot-r"></div>
-          <div class="dot dot-y"></div>
-          <div class="dot dot-g"></div>
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
         </div>
-        <div class="ide-code">
-          <span class="kw">writer</span>.<span class="fn">write</span>(Temperature(<br>
-          &nbsp;&nbsp;value=<span class="kw">22.5</span>))
-        </div>
-        <div class="bars">
-          <div class="bar bar-1"></div>
-          <div class="bar bar-2"></div>
-          <div class="bar bar-3"></div>
-        </div>
+        <div class="ide-code"><span class="kw">writer</span>.<span class="fn">write</span>(Temperature(<br>&nbsp;&nbsp;value=<span class="kw">22.5</span>))</div>
+        <div class="bars"><div class="bar bar-1"></div><div class="bar bar-2"></div><div class="bar bar-3"></div></div>
       </div>
     </div>
   </div>
 
   <hr class="section-divider">
 
-  <!-- Install Locally -->
   <div class="install-section">
     <div class="section-label">Install Locally</div>
     <h2 class="section-title">Try Connext on your desktop</h2>
@@ -535,98 +191,75 @@
         <!-- macOS -->
         <div class="os-tab-wrapper" id="wrap-macos">
           <button class="os-tab" onclick="toggleDropdown('macos', event)">
-            <!-- Apple icon -->
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.18 1.27-2.16 3.8.03 3.02 2.65 4.03 2.68 4.04l-.07.28zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
             macOS
-            <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <!-- ★ NEW: Product dropdown -->
           <div class="product-dropdown" id="dd-macos">
             <div class="dropdown-header">Select product to download</div>
-            <div class="dropdown-item" onclick="selectProduct('macos', 'connext', 'Connext', 'macOS · pkg installer', event)">
-              <div class="dropdown-item-icon icon-connext">
-                <svg viewBox="0 0 24 24" fill="#0d7c8c"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              </div>
-              <div class="dropdown-item-text">
-                <div class="dropdown-item-name">Connext</div>
-                <div class="dropdown-item-desc">Flagship Connext product & tools</div>
-              </div>
+            <div class="dropdown-item" onclick="selectProduct('macos','connext','Connext','macOS · pkg installer',event)">
+              <div class="dropdown-item-icon icon-connext"><svg viewBox="0 0 24 24" fill="#0d7c8c"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+              <div class="dropdown-item-text"><div class="dropdown-item-name">Connext</div><div class="dropdown-item-desc">Flagship Connext product &amp; tools</div></div>
               <svg class="dropdown-item-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
             </div>
-            <div class="dropdown-item" onclick="selectProduct('macos', 'automotive', 'Connext for Automotive', 'macOS · pkg installer', event)">
-              <div class="dropdown-item-icon icon-automotive">
-                <svg viewBox="0 0 24 24" fill="#e05a1e"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
-              </div>
-              <div class="dropdown-item-text">
-                <div class="dropdown-item-name">Connext for Automotive</div>
-                <div class="dropdown-item-desc">AUTOSAR-ready, FACE™ &amp; automotive profiles</div>
-              </div>
+            <div class="dropdown-item" onclick="selectProduct('macos','automotive','Connext Drive','macOS · pkg installer',event)">
+              <div class="dropdown-item-icon icon-automotive"><svg viewBox="0 0 24 24" fill="#e05a1e"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg></div>
+              <div class="dropdown-item-text"><div class="dropdown-item-name">Connext Drive</div><div class="dropdown-item-desc">AUTOSAR-ready, FACE™ &amp; automotive profiles</div></div>
               <svg class="dropdown-item-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
             </div>
           </div>
         </div>
 
-        <!-- Linux APT -->
-        <div class="os-tab-wrapper" id="wrap-linapt">
-          <button class="os-tab" onclick="toggleDropdown('linapt', event)">
+        <!-- ★ COMBINED Linux tab -->
+        <div class="os-tab-wrapper" id="wrap-linux">
+          <button class="os-tab" onclick="toggleDropdown('linux', event)">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            Linux (APT)
+            Linux
             <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <div class="product-dropdown" id="dd-linapt">
+          <div class="product-dropdown" id="dd-linux">
             <div class="dropdown-header">Select product to download</div>
-            <div class="dropdown-item" onclick="selectProduct('linapt', 'connext', 'Connext', 'Linux (APT) · .deb package', event)">
-              <div class="dropdown-item-icon icon-connext">
-                <svg viewBox="0 0 24 24" fill="#0d7c8c"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              </div>
-              <div class="dropdown-item-text">
-                <div class="dropdown-item-name">Connext</div>
-                <div class="dropdown-item-desc">Flagship Connext product & tools</div>
-              </div>
-              <svg class="dropdown-item-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-            </div>
-            <div class="dropdown-item" onclick="selectProduct('linapt', 'automotive', 'Connext for Automotive', 'Linux (APT) · .deb package', event)">
-              <div class="dropdown-item-icon icon-automotive">
-                <svg viewBox="0 0 24 24" fill="#e05a1e"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
-              </div>
-              <div class="dropdown-item-text">
-                <div class="dropdown-item-name">Connext for Automotive</div>
-                <div class="dropdown-item-desc">AUTOSAR-ready, FACE™ &amp; automotive profiles</div>
-              </div>
-              <svg class="dropdown-item-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-            </div>
-          </div>
-        </div>
 
-        <!-- Linux Installer -->
-        <div class="os-tab-wrapper" id="wrap-linins">
-          <button class="os-tab" onclick="toggleDropdown('linins', event)">
-            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            Linux (installer)
-            <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="product-dropdown" id="dd-linins">
-            <div class="dropdown-header">Select product to download</div>
-            <div class="dropdown-item" onclick="selectProduct('linins', 'connext', 'Connext', 'Linux · .run installer', event)">
-              <div class="dropdown-item-icon icon-connext">
-                <svg viewBox="0 0 24 24" fill="#0d7c8c"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              </div>
+            <!-- Connext row — expands to reveal APT / Installer -->
+            <div class="dropdown-item" id="linux-connext-row" onclick="toggleLinuxConnext(event)">
+              <div class="dropdown-item-icon icon-connext"><svg viewBox="0 0 24 24" fill="#0d7c8c"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
               <div class="dropdown-item-text">
                 <div class="dropdown-item-name">Connext</div>
-                <div class="dropdown-item-desc">Flagship Connext product & tools</div>
+                <div class="dropdown-item-desc">Flagship Connext product &amp; tools</div>
               </div>
-              <svg class="dropdown-item-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+              <svg class="linux-expand-caret" viewBox="0 0 24 24" style="width:14px;height:14px;margin-top:3px;flex-shrink:0;">
+                <path d="M6 9l6 6 6-6" stroke="#a0aab8" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </div>
-            <div class="dropdown-item" onclick="selectProduct('linins', 'automotive', 'Connext for Automotive', 'Linux · .run installer', event)">
-              <div class="dropdown-item-icon icon-automotive">
-                <svg viewBox="0 0 24 24" fill="#e05a1e"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+
+            <!-- Sub-items: APT and Installer (Connext only) -->
+            <div class="linux-subitems" id="linux-connext-subitems">
+              <div class="dropdown-subitem" onclick="selectProduct('linux','connext','Connext','Linux (APT) · .deb package',event)">
+                <div class="dropdown-subitem-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#0d7c8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg>
+                </div>
+                <div><div class="subitem-label">APT Package</div><div class="subitem-desc">Ubuntu 22.04 / 24.04 · .deb</div></div>
+                <svg class="subitem-arrow" viewBox="0 0 24 24" fill="none" stroke="#a0aab8" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
               </div>
+              <div class="dropdown-subitem" onclick="selectProduct('linux','connext','Connext','Linux · .run installer',event)">
+                <div class="dropdown-subitem-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#0d7c8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </div>
+                <div><div class="subitem-label">Installer</div><div class="subitem-desc">Linux x64 · .run installer</div></div>
+                <svg class="subitem-arrow" viewBox="0 0 24 24" fill="none" stroke="#a0aab8" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+              </div>
+            </div>
+
+            <!-- Connext Drive — installer only, direct selection -->
+            <div class="dropdown-item" style="border-top:1px solid #f0f0f0;" onclick="selectProduct('linux','automotive','Connext Drive','Linux · .run installer',event)">
+              <div class="dropdown-item-icon icon-automotive"><svg viewBox="0 0 24 24" fill="#e05a1e"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg></div>
               <div class="dropdown-item-text">
-                <div class="dropdown-item-name">Connext for Automotive</div>
-                <div class="dropdown-item-desc">AUTOSAR-ready, FACE™ &amp; automotive profiles</div>
+                <div class="dropdown-item-name">Connext Drive</div>
+                <div class="dropdown-item-desc">AUTOSAR-ready, FACE™ &amp; automotive profiles · Installer only</div>
               </div>
               <svg class="dropdown-item-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
             </div>
+
           </div>
         </div>
 
@@ -639,61 +272,39 @@
           </button>
           <div class="product-dropdown" id="dd-win">
             <div class="dropdown-header">Select product to download</div>
-            <div class="dropdown-item" onclick="selectProduct('win', 'connext', 'Connext', 'Windows · .exe installer', event)">
-              <div class="dropdown-item-icon icon-connext">
-                <svg viewBox="0 0 24 24" fill="#0d7c8c"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              </div>
-              <div class="dropdown-item-text">
-                <div class="dropdown-item-name">Connext</div>
-                <div class="dropdown-item-desc">Flagship Connext product &amp; tools</div>
-              </div>
+            <div class="dropdown-item" onclick="selectProduct('win','connext','Connext','Windows · .exe installer',event)">
+              <div class="dropdown-item-icon icon-connext"><svg viewBox="0 0 24 24" fill="#0d7c8c"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+              <div class="dropdown-item-text"><div class="dropdown-item-name">Connext</div><div class="dropdown-item-desc">Flagship Connext product &amp; tools</div></div>
               <svg class="dropdown-item-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
             </div>
-            <div class="dropdown-item" onclick="selectProduct('win', 'automotive', 'Connext for Automotive', 'Windows · .exe installer', event)">
-              <div class="dropdown-item-icon icon-automotive">
-                <svg viewBox="0 0 24 24" fill="#e05a1e"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
-              </div>
-              <div class="dropdown-item-text">
-                <div class="dropdown-item-name">Connext for Automotive</div>
-                <div class="dropdown-item-desc">AUTOSAR-ready, FACE™ &amp; automotive profiles</div>
-              </div>
+            <div class="dropdown-item" onclick="selectProduct('win','automotive','Connext Drive','Windows · .exe installer',event)">
+              <div class="dropdown-item-icon icon-automotive"><svg viewBox="0 0 24 24" fill="#e05a1e"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg></div>
+              <div class="dropdown-item-text"><div class="dropdown-item-name">Connext Drive</div><div class="dropdown-item-desc">AUTOSAR-ready, FACE™ &amp; automotive profiles</div></div>
               <svg class="dropdown-item-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
             </div>
           </div>
         </div>
 
-        <!-- More options (no dropdown needed) -->
         <button class="os-tab more-options-tab">More options</button>
 
       </div><!-- /platform-tabs -->
 
-      <!-- ★ NEW: 3-step download panel — appears after product selection -->
+      <!-- 3-step download panel -->
       <div class="download-panel" id="downloadPanel">
         <div class="download-steps">
-
-          <!-- Step 1: Download Installer -->
           <div class="download-step">
-            <div class="step-header">
-              <div class="step-num">1</div>
-              <div class="step-title">Download Installer</div>
-            </div>
+            <div class="step-header"><div class="step-num">1</div><div class="step-title">Download Installer</div></div>
             <div class="step-desc">Download and run the installer to install <span id="panelProductName">Connext</span>.</div>
             <div class="step-action">
               <button class="step-btn" id="installerBtn">
-                <!-- icon swapped by JS -->
                 <svg id="installerIcon" viewBox="0 0 24 24" width="14" height="14"><path class="step-btn-icon-apple" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.18 1.27-2.16 3.8.03 3.02 2.65 4.03 2.68 4.04l-.07.28zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
                 <span id="installerBtnLabel">macOS INSTALLER</span>
               </button>
               <div class="step-sub" id="installerSub">Connext 7.7.0 for macOS® (Apple Silicon) 14, 15, 26</div>
             </div>
           </div>
-
-          <!-- Step 2: Download License File -->
           <div class="download-step">
-            <div class="step-header">
-              <div class="step-num">2</div>
-              <div class="step-title">Download License File</div>
-            </div>
+            <div class="step-header"><div class="step-num">2</div><div class="step-title">Download License File</div></div>
             <div class="step-desc">You'll use this file in the next step to activate your license.</div>
             <div class="step-action">
               <button class="step-btn">
@@ -702,13 +313,8 @@
               </button>
             </div>
           </div>
-
-          <!-- Step 3: Get Started -->
           <div class="download-step">
-            <div class="step-header">
-              <div class="step-num">3</div>
-              <div class="step-title">Get Started</div>
-            </div>
+            <div class="step-header"><div class="step-num">3</div><div class="step-title">Get Started</div></div>
             <div class="step-desc">Set up your license and build your first <span id="panelProductName2">Connext</span> application.</div>
             <div class="step-action">
               <button class="step-btn">
@@ -717,7 +323,6 @@
               </button>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -726,7 +331,7 @@
     <div style="margin-top:6px;">
       <span class="callout">
         <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>
-        ★ NEW — Clicking an OS tab reveals a dropdown to choose between Connext or Connext for Automotive before downloading
+        ★ Linux is now one tab — Connext expands to offer APT or Installer; Connext Drive goes straight to Installer
       </span>
     </div>
 
@@ -735,37 +340,30 @@
 
   <hr class="section-divider">
 
-  <!-- More Resources -->
   <div class="resources-section">
     <div class="section-label">More Resources</div>
     <h2 class="section-title">Learn more about Connext</h2>
     <p class="section-desc">Continue learning at your own pace with guided docs, the Connext chatbot, and direct engineering help when you need it.</p>
     <div class="resources-grid">
       <div class="resource-card">
-        <div class="resource-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-        </div>
+        <div class="resource-card-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
         <div class="resource-card-title">Documentation</div>
         <div class="resource-card-desc">Step-by-step guides and API reference for building with Connext DDS.</div>
       </div>
       <div class="resource-card">
-        <div class="resource-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-        </div>
+        <div class="resource-card-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
         <div class="resource-card-title">Connext Chatbot</div>
         <div class="resource-card-desc">Get instant answers from an AI assistant trained on Connext documentation.</div>
       </div>
       <div class="resource-card">
-        <div class="resource-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-        </div>
+        <div class="resource-card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
         <div class="resource-card-title">Engineering Support</div>
         <div class="resource-card-desc">Connect directly with RTI engineers for hands-on evaluation guidance.</div>
       </div>
     </div>
   </div>
 
-</div><!-- /page -->
+</div>
 
 <script>
   let activeDropdown = null;
@@ -776,6 +374,7 @@
     if (activeDropdown && activeDropdown !== wrapper) {
       activeDropdown.classList.remove('open');
       activeDropdown.querySelector('.os-tab').classList.remove('active');
+      collapseLinuxConnext();
     }
     const isOpen = wrapper.classList.contains('open');
     wrapper.classList.toggle('open', !isOpen);
@@ -783,13 +382,21 @@
     activeDropdown = !isOpen ? wrapper : null;
   }
 
-  // OS metadata: button label, sub-text suffix, and icon SVG path
-  const osMeta = {
-    macos:  { label: 'MACOS INSTALLER',         icon: 'apple',   sub: 'for macOS® (Apple Silicon) 14, 15, 26' },
-    linapt: { label: 'LINUX (APT) INSTALLER',   icon: 'linux',   sub: 'for Ubuntu 22.04 / 24.04 (x64)' },
-    linins: { label: 'LINUX INSTALLER',         icon: 'linux',   sub: 'for Linux x64 · .run installer' },
-    win:    { label: 'WINDOWS INSTALLER',       icon: 'windows', sub: 'for Windows 10 / 11 (x64)' },
-  };
+  function toggleLinuxConnext(event) {
+    event.stopPropagation();
+    const subitems = document.getElementById('linux-connext-subitems');
+    const caret = document.querySelector('#linux-connext-row .linux-expand-caret');
+    const isOpen = subitems.classList.contains('open');
+    subitems.classList.toggle('open', !isOpen);
+    caret.style.transform = isOpen ? '' : 'rotate(180deg)';
+  }
+
+  function collapseLinuxConnext() {
+    const subitems = document.getElementById('linux-connext-subitems');
+    const caret = document.querySelector('#linux-connext-row .linux-expand-caret');
+    if (subitems) { subitems.classList.remove('open'); }
+    if (caret) { caret.style.transform = ''; }
+  }
 
   const iconSVGs = {
     apple:   '<path fill="#1a1a2e" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.18 1.27-2.16 3.8.03 3.02 2.65 4.03 2.68 4.04l-.07.28zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>',
@@ -803,33 +410,42 @@
     wrapper.classList.remove('open');
     wrapper.querySelector('.os-tab').classList.add('active');
     activeDropdown = null;
+    collapseLinuxConnext();
 
-    const os = osMeta[osId] || { label: 'INSTALLER', icon: 'linux', sub: '' };
     const shortName = productId === 'automotive' ? 'Connext Drive' : 'Connext';
     const versionPrefix = productId === 'automotive' ? 'Connext Drive 7.7.0 ' : 'Connext 7.7.0 ';
+    const iconKey = osId === 'macos' ? 'apple' : osId === 'win' ? 'windows' : 'linux';
 
-    // Populate step 1
+    let btnLabel, sub;
+    if (osId === 'linux') {
+      if (metaText.includes('APT')) {
+        btnLabel = 'LINUX (APT) INSTALLER';
+        sub = 'for Ubuntu 22.04 / 24.04 · .deb package';
+      } else {
+        btnLabel = 'LINUX INSTALLER';
+        sub = 'for Linux x64 · .run installer';
+      }
+    } else if (osId === 'macos') {
+      btnLabel = 'MACOS INSTALLER';
+      sub = 'for macOS® (Apple Silicon) 14, 15, 26';
+    } else {
+      btnLabel = 'WINDOWS INSTALLER';
+      sub = 'for Windows 10 / 11 (x64)';
+    }
+
     document.getElementById('panelProductName').textContent = shortName;
-    document.getElementById('installerBtnLabel').textContent = os.label;
-    document.getElementById('installerIcon').innerHTML = iconSVGs[os.icon];
-    document.getElementById('installerSub').textContent = versionPrefix + os.sub;
-
-    // Populate step 3
+    document.getElementById('installerBtnLabel').textContent = btnLabel;
+    document.getElementById('installerIcon').innerHTML = iconSVGs[iconKey];
+    document.getElementById('installerSub').textContent = versionPrefix + sub;
     document.getElementById('panelProductName2').textContent = shortName;
-
     document.getElementById('downloadPanel').classList.add('visible');
   }
 
-  function clearSelection() {
-    document.getElementById('downloadPanel').classList.remove('visible');
-    document.querySelectorAll('.os-tab').forEach(t => t.classList.remove('active'));
-  }
-
-  // Close dropdowns when clicking outside
   document.addEventListener('click', () => {
     if (activeDropdown) {
       activeDropdown.classList.remove('open');
       activeDropdown.querySelector('.os-tab').classList.remove('active');
+      collapseLinuxConnext();
       activeDropdown = null;
     }
   });
